@@ -21,7 +21,7 @@ const navLinks = [
 
 export default function Nav() {
   return (
-    <header className="flex w-full items-center justify-evenly">
+    <nav className="flex w-full items-center justify-evenly">
       <h1 className="font-black text-3xl">SHOP.CO</h1>
       <div>
         <NavigationMenu>
@@ -62,6 +62,6 @@ export default function Nav() {
           <CircleUser />
         </Button>
       </div>
-    </header>
+    </nav>
   );
 }
