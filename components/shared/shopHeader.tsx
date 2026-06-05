@@ -8,6 +8,16 @@ import {
 import { Input } from "../ui/input";
 import { ShoppingCart } from "lucide-react";
 import { CircleUser } from "lucide-react";
+import { Button } from "../ui/button";
+import Link from "next/link";
+
+const navLinks = [
+  { label: "On sale", href: "/on-sale" },
+  { label: "New Arrivals", href: "/new-arrivals" },
+  { label: "Brands", href: "/brands" },
+  { label: "Cart", href: "/cart" },
+  { label: "Profile", href: "/profile" },
+];
 
 export default function ShopHeader() {
   return (
@@ -17,21 +27,23 @@ export default function ShopHeader() {
         <NavigationMenu>
           <NavigationMenuList className="gap-4">
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-1xl">
+              <NavigationMenuTrigger className="text-xl">
                 Shop
               </NavigationMenuTrigger>
             </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink className="text-1xl">
-                On sale
-              </NavigationMenuLink>
-              <NavigationMenuLink className="text-1xl">
-                New Arrivals
-              </NavigationMenuLink>
-              <NavigationMenuLink className="text-1xl">
-                Brands
-              </NavigationMenuLink>
+            <NavigationMenuItem className="gap-4 text-bolt">
+              {navLinks.map((item, id) => {
+                return (
+                  <NavigationMenuLink
+                    className="text-xl font-normal"
+                    asChild
+                    key={id}
+                  >
+                    <Link href={item.href}>{item.label}</Link>
+                  </NavigationMenuLink>
+                );
+              })}
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -43,8 +55,12 @@ export default function ShopHeader() {
         />
       </div>
       <div className="flex items-center gap-4">
-        <ShoppingCart />
-        <CircleUser />
+        <Button variant="default">
+          <ShoppingCart />
+        </Button>
+        <Button variant="default">
+          <CircleUser />
+        </Button>
       </div>
     </header>
   );
