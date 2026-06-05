@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import ShopHeader from "@/components/shared/shopHeader";
+import Nav from "@/components/shared/Nav";
 import "./globals.css";
 
 const satoshi = localFont({
@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${satoshi.variable} min-h-full flex flex-col p-7`}>
         <main>
-          <ShopHeader />
+          <Nav />
           {children}
         </main>
       </body>

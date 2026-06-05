@@ -19,7 +19,7 @@ const navLinks = [
   { label: "Profile", href: "/profile" },
 ];
 
-export default function ShopHeader() {
+export default function Nav() {
   return (
     <header className="flex w-full items-center justify-evenly">
       <h1 className="font-black text-3xl">SHOP.CO</h1>
