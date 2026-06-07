@@ -5,8 +5,10 @@ import {
   NavigationMenuTrigger,
   NavigationMenuList,
   NavigationMenuContent,
+  NavigationMenuLink,
 } from "../ui/navigation-menu";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
 type LinksProps = {
   links: NavLink[];
@@ -23,7 +25,11 @@ export default function MobileNavMenu({ links }: LinksProps) {
               <NavigationMenuContent>
                 <ul>
                   {links.map((item, id) => {
-                    return <li key={id}>{item.label}</li>;
+                    return (
+                      <NavigationMenuLink>
+                        <Link href={item.href}>{item.label}</Link>
+                      </NavigationMenuLink>
+                    );
                   })}
                 </ul>
               </NavigationMenuContent>

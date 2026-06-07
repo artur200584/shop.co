@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header
       className="flex flex-1 w-full gap-8 bg-header-background  md:px-8 flex-col
-  lg:flex-row lg:px-10 lg:flex-col"
+  lg:flex-row lg:px-10"
     >
       <div className="flex flex-1 flex-col justify-center gap-4 py-12">
         <h1 className="text-5xl font-black uppercase leading-[0.9] md:text-5xl p-2 lg:text-7xl">

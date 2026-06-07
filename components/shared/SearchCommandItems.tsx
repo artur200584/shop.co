@@ -28,8 +28,8 @@ export default function SearchCommandItems({
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Suggestions">
-              {links.map((item) => {
-                return <CommandItem>{item.label}</CommandItem>;
+              {links.map((item, id) => {
+                return <CommandItem key={id}>{item.label}</CommandItem>;
               })}
             </CommandGroup>
           </CommandList>
