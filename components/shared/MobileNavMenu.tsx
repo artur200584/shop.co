@@ -26,7 +26,7 @@ export default function MobileNavMenu({ links }: LinksProps) {
                 <ul>
                   {links.map((item, id) => {
                     return (
-                      <NavigationMenuLink>
+                      <NavigationMenuLink asChild key={id}>
                         <Link href={item.href}>{item.label}</Link>
                       </NavigationMenuLink>
                     );
