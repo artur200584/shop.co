@@ -35,11 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${satoshi.variable} min-h-full flex flex-col p-7`}>
-        <main>
-          <Nav />
-          {children}
-        </main>
+      <body className={`${satoshi.variable} min-h-screen flex flex-col`}>
+        <Nav />
+        <main className="flex flex-1 flex-col">{children}</main>
       </body>
     </html>
   );
