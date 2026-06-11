@@ -26,6 +26,6 @@ export const GetProducts = async () => {
 
     isNew: Math.round(product.rating) === 5,
     isSale: product.discountPercentage > 0,
-    isPopular: index >= 4 && index < 8,
+    isPopular: product.rating >= 4.5 && product.stock > 50,
   }));
 };
