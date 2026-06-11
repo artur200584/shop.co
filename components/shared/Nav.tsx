@@ -24,9 +24,9 @@ export default function Nav() {
 
   return (
     <nav className="flex w-full items-center gap-4 px-4 py-5 md:px-10">
-      <Button variant="link" className="size-10 p-0 lg:hidden">
+      <div className="lg:hidden">
         <MobileNavMenu links={navLinks} />
-      </Button>
+      </div>
 
       <h1 className="shrink-0 text-2xl font-black xl:text-3xl">SHOP.CO</h1>
 

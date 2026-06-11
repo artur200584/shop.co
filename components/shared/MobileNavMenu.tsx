@@ -20,20 +20,26 @@ export default function MobileNavMenu({ links }: LinksProps) {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger showIcon={false}>
+            <NavigationMenuTrigger
+              showIcon={false}
+              aria-label="Відкрити навігаційне меню"
+              className="size-10 p-0"
+            >
               <Menu className="size-7" />
-              <NavigationMenuContent>
-                <ul>
-                  {links.map((item, id) => {
-                    return (
-                      <NavigationMenuLink asChild key={id}>
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul>
+                {links.map((item) => {
+                  return (
+                    <li key={item.href}>
+                      <NavigationMenuLink asChild>
                         <Link href={item.href}>{item.label}</Link>
                       </NavigationMenuLink>
-                    );
-                  })}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuTrigger>
+                    </li>
+                  );
+                })}
+              </ul>
+            </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
