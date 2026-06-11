@@ -2,16 +2,16 @@ import { Product } from "@/lib/types";
 import { Star } from "lucide-react";
 import Image from "next/image";
 
-type PropsPropduct = {
+type PropsProduct = {
   product: Product;
 };
 
-export default function ProductCard({ product }: PropsPropduct) {
+export default function ProductCard({ product }: PropsProduct) {
   return (
     <div className="flex flex-col gap-3">
       <div className="rounded-xl bg-header-background">
         <Image
-          src={product.images[0]}
+          src={product.images[0] || "нема зображення"}
           alt={product.title}
           width={300}
           height={300}

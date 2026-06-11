@@ -20,7 +20,11 @@ export default function MobileNavMenu({ links }: LinksProps) {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger showIcon={false} className="size-10 p-0">
+            <NavigationMenuTrigger
+              showIcon={false}
+              aria-label="Відкрити навігаційне меню"
+              className="size-10 p-0"
+            >
               <Menu className="size-7" />
             </NavigationMenuTrigger>
             <NavigationMenuContent>

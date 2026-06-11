@@ -5,16 +5,27 @@ type ProductsResponse = {
   products: Product[];
 };
 
-export default async function getProducts(): Promise<Product[]> {
-  const categories = ["mens-shirts", "mens-shoes", "tops", "womens-dresses"];
+export const GetProducts = async () => {
+  const urls = [
+    "https://dummyjson.com/products/category/mens-shirts",
+    "https://dummyjson.com/products/category/mens-shoes",
+    "https://dummyjson.com/products/category/womens-dresses",
+    "https://dummyjson.com/products/category/womens-shoes",
+    "https://dummyjson.com/products/category/womens-bags",
+    "https://dummyjson.com/products/category/womens-jewellery",
+  ];
 
-  const responses = await Promise.all(
-    categories.map((category) =>
-      axios.get<ProductsResponse>(
-        `https://dummyjson.com/products/category/${category}`,
-      ),
-    ),
+  const res = await Promise.all(
+    urls.map((url) => axios.get<ProductsResponse>(url)),
   );
 
-  return responses.flatMap((res) => res.data.products);
-}
+  const products = res.flatMap((res) => res.data.products);
+
+  return products.map((product, index) => ({
+    ...product,
+
+    isNew: Math.round(product.rating) === 5,
+    isSale: product.discountPercentage > 0,
+    isPopular: index >= 4 && index < 8,
+  }));
+};

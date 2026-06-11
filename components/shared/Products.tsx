@@ -6,11 +6,11 @@ import ProductCard from "./ProductCard";
 import { useState } from "react";
 import { Button } from "../ui/button";
 
-type PropsPropduct = {
+type PropsProduct = {
   products: Product[];
 };
 
-export default function Products({ products }: PropsPropduct) {
+export default function Products({ products }: PropsProduct) {
   const [showAll, setShowAll] = useState(false);
 
   const visibleProducts = showAll ? products : products.slice(0, 4);
