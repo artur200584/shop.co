@@ -8,16 +8,17 @@ import { Button } from "../ui/button";
 
 type PropsProduct = {
   products: Product[];
+  title: string;
 };
 
-export default function Products({ products }: PropsProduct) {
+export default function Products({ products, title }: PropsProduct) {
   const [showAll, setShowAll] = useState(false);
 
   const visibleProducts = showAll ? products : products.slice(0, 4);
 
   return (
-    <section>
-      <Title title={"NEW ARRIVALS"} />
+    <section className="mb-15">
+      <Title title={title} variant="link" />
 
       <div className="flex flex-wrap justify-center w-full items-center gap-3">
         {visibleProducts.map((item) => (
