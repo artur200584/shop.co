@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 type PropsTitle = {
   title: string;
   className?: string;
-  variant: "defalut" | "link";
+  variant?: "defalut" | "link";
 };
 
 export default function Title({
