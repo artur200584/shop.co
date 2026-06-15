@@ -1,9 +1,19 @@
+import { cn } from "@/lib/utils";
+
 type PropsTitle = {
   title: string;
+  className?: string;
 };
 
-export default function Title({ title }: PropsTitle) {
+export default function Title({ title, className }: PropsTitle) {
   return (
-    <h1 className="text-center p-20 text-5xl text-black font-black">{title}</h1>
+    <h1
+      className={cn(
+        "text-center p-20 text-5xl text-black font-black",
+        className,
+      )}
+    >
+      {title}
+    </h1>
   );
 }
