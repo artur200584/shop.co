@@ -54,6 +54,7 @@ components/
     Products.tsx
     SearchCommandItems.tsx
     Title.tsx
+    Style.tsx
 
   ui/
     button.tsx
@@ -96,6 +97,7 @@ package.json
 - `Products.tsx` - секція товарів `New Arrivals`.
 - `ProductCard.tsx` - картка окремого товару.
 - `Title.tsx` - спільний компонент заголовка секції.
+- `Style.tsx` - комопонент який рендерить силки на види одягу.
 
 ### `components/ui`
 

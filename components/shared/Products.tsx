@@ -18,7 +18,7 @@ export default function Products({ products, title }: PropsProduct) {
 
   return (
     <section className="mb-15">
-      <Title title={title} />
+      <Title title={title} variant="link" />
 
       <div className="flex flex-wrap justify-center w-full items-center gap-3">
         {visibleProducts.map((item) => (
