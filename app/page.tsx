@@ -4,6 +4,7 @@ import Products from "@/components/shared/Products";
 import Style from "@/components/shared/Style";
 import { GetProducts } from "@/lib/api";
 import Coments from "@/components/shared/Coments";
+import Contact from "@/components/shared/Contact";
 
 export default async function Home() {
   const products = await GetProducts();
@@ -18,6 +19,7 @@ export default async function Home() {
       <Products products={topProduct} title="TOP SELLING" />
       <Style />
       <Coments products={reviews} />
+      <Contact />
     </>
   );
 }
