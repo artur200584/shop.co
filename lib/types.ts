@@ -37,3 +37,5 @@ export type Product = {
   images: string[];
   thumbnail: string;
 };
+
+export type Review = Product["reviews"][number];
