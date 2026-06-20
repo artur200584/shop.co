@@ -23,7 +23,7 @@ export default function Coment({ comentone }: ComentProps) {
         </div>
         <div>
           <div className="flex items-center gap-2 whitespace-nowrap">
-            <p className="text-xl font-bold">{comentone.reviewerName}</p>
+            <p className="text-base font-bold">{comentone.reviewerName}</p>
             <Check className="size-6 shrink-0 rounded-xl bg-green-500 text-white" />
           </div>
           <p className="text-md text-gray-500">{comentone.comment}</p>
