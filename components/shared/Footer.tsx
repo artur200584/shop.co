@@ -50,8 +50,7 @@ export default function Footer() {
       <div className="flex flex-col gap-5">
         <h2 className="text-3xl font-bold">SHOP.CO</h2>
         <p>
-          We have clothes that suits your style and <br /> which you’re proud to
-          wear. From women to men.
+          We have clothes that suit your style and <br /> which you’re proud to
         </p>
         <div className="flex gap-5">
           <FontAwesomeIcon icon={faTwitter} className="size-5 text-black" />

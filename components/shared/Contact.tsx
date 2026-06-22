@@ -11,7 +11,14 @@ export default function Contact() {
         className="p-6 text-left text-3xl text-white min-[1000px]:p-20 min-[1000px]:text-5xl"
       />
       <div className="mr-5 w-[50%]">
-        <Input icon={<Mail />} />
+        <Input
+          icon={<Mail aria-hidden="true" />}
+          type="email"
+          name="email"
+          autoComplete="email"
+          placeholder="Enter your email"
+          aria-label="Email address"
+        />
         <Button
           variant="link"
           className="w-full text-black rounded-full bg-white p-6 mt-6"
