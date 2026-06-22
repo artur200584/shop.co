@@ -38,6 +38,7 @@ export default function Nav() {
         <Input
           placeholder="Search for products..."
           className="border-0 shadow-none focus-visible:border-0 focus-visible:ring-0"
+          icon={<Search />}
         />
       </div>
 

@@ -1,12 +1,16 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import { Search } from "lucide-react";
+import { ReactNode } from "react";
 
-function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+type InputProps = React.ComponentProps<"input"> & {
+  icon?: ReactNode;
+};
+
+function Input({ icon, className, type, ...props }: InputProps) {
   return (
     <div className="flex items-center bg-gray-100 p-1 rounded-2xl">
-      <Search />
+      {icon}
       <input
         type={type}
         data-slot="input"
