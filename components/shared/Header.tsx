@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "../ui/button";
 
 export default function Header() {
@@ -18,8 +19,11 @@ export default function Header() {
             style.
           </p>
           <div className="px-4">
-            <Button className="w-full rounded-full bg-black p-6 md:w-52">
-              Shop Now
+            <Button
+              asChild
+              className="w-full rounded-full bg-black p-6 md:w-52"
+            >
+              <Link href="/shop">Shop Now</Link>
             </Button>
           </div>
 

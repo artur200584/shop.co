@@ -5,28 +5,28 @@ import Link from "next/link";
 const styleCards = [
   {
     title: "Casual",
-    href: "#",
+    href: "/shop/casual",
     src: "/images/image 11.png",
     className: "md:col-span-2",
     imageClassName: "w-[220px] sm:w-[260px] md:w-[220px]",
   },
   {
     title: "Formal",
-    href: "#",
+    href: "/shop/formal",
     src: "/images/image 13.png",
     className: "md:col-span-3",
     imageClassName: "w-[260px] sm:w-[340px] md:w-[330px]",
   },
   {
     title: "Party",
-    href: "#",
+    href: "/shop/party",
     src: "/images/image 12.png",
     className: "md:col-span-3",
     imageClassName: "w-[260px] sm:w-[340px] md:w-[330px]",
   },
   {
     title: "Gym",
-    href: "#",
+    href: "/shop/gym",
     src: "/images/image 14.png",
     className: "md:col-span-2",
     imageClassName: "w-[220px] sm:w-[260px] md:w-[220px]",

@@ -1,9 +1,27 @@
 import axios from "axios";
 import { Product } from "./types";
+import { dressStyleCategories, DressStyle } from "./dress-styles";
 
 type ProductsResponse = {
   products: Product[];
 };
+
+export default async function getProductsByCategories(categories: string[]) {
+  const res = Promise.all(
+    categories.map((category) =>
+      axios.get<ProductsResponse>(
+        `https://dummyjson.com/products/category/${category}`,
+      ),
+    ),
+  );
+  return (await res).flatMap((res) => res.data.products);
+}
+
+export function getProductsByStyle(style: DressStyle) {
+  const categories = dressStyleCategories[style];
+
+  return getProductsByCategories([...categories]);
+}
 
 export const GetProducts = async () => {
   const urls = [
