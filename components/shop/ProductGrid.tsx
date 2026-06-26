@@ -32,10 +32,6 @@ export default function ProductGrid({
           <MobileFilter onApplyPrice={onApplyPrice} />
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {/* {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))} */}
-
           {products.length === 0 ? (
             <div className="col-span-full flex items-center justify-center">
               <Empty>
@@ -43,7 +39,7 @@ export default function ProductGrid({
                   <RotateCw />
                 </EmptyMedia>
                 <EmptyHeader>
-                  <EmptyTitle>Not Found</EmptyTitle>
+                  <EmptyTitle>"No products found"</EmptyTitle>
                   <EmptyDescription>Reset Filter</EmptyDescription>
                 </EmptyHeader>
               </Empty>

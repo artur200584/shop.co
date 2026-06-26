@@ -13,10 +13,14 @@ type StylesProps = {
   }>;
 };
 
+function isDressStyle(value: string): value is DressStyle {
+  return Object.hasOwn(dressStyleCategories, value);
+}
+
 export default async function ShopPage({ params }: StylesProps) {
   const { styles } = await params;
 
-  if (!(styles in dressStyleCategories)) {
+  if (!isDressStyle(styles)) {
     return notFound();
   }
 

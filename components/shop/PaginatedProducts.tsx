@@ -46,13 +46,13 @@ export default function PaginatedProducts({ products, style }: Props) {
       />
 
       <div className="mt-8 flex items-center justify-center">
-        <Button
-          variant="outline"
-          disabled={current === 1}
-          onClick={() => changePage(current - 1)}
-        >
-          Previous
-        </Button>
+        {totalPages ? (
+          <Button
+            variant="outline"
+            disabled={current === 1}
+            onClick={() => changePage(current - 1)}
+          />
+        ) : null}
 
         <div className="flex gap-2">
           {Array.from({ length: totalPages }).map((_, index) => {
@@ -70,13 +70,15 @@ export default function PaginatedProducts({ products, style }: Props) {
           })}
         </div>
 
-        <Button
-          variant="outline"
-          disabled={current === totalPages}
-          onClick={() => changePage(current + 1)}
-        >
-          Next
-        </Button>
+        {totalPages ? (
+          <Button
+            variant="outline"
+            disabled={current === totalPages}
+            onClick={() => changePage(current + 1)}
+          >
+            Next
+          </Button>
+        ) : null}
       </div>
     </div>
   );

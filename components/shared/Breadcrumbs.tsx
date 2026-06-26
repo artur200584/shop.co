@@ -20,7 +20,9 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
           return (
             <li key={item.label} className="flex items-center gap-2">
               {isLast || !item.href ? (
-                <span className="text-black">{item.label}</span>
+                <span aria-current="page" className="text-black">
+                  {item.label}
+                </span>
               ) : (
                 <Link href={item.href} className="hover:text-black">
                   {item.label}

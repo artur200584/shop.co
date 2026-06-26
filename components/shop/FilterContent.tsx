@@ -62,7 +62,6 @@ export default function FilterContent({
         <Slider
           onValueChange={setValue}
           value={value}
-          defaultValue={[25, 50]}
           max={300}
           step={1}
           className="mx-auto w-full max-w-xs"
