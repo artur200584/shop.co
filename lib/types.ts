@@ -39,3 +39,10 @@ export type Product = {
 };
 
 export type Review = Product["reviews"][number];
+
+export type ProductsResponse = {
+  products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
+};
