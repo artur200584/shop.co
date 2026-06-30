@@ -13,7 +13,7 @@ export default function ProductCard({ product }: PropsProduct) {
       <div className="flex flex-col gap-3">
         <div className="rounded-xl bg-header-background">
           <Image
-            src={product.images[0] || "нема зображення"}
+            src={product.images[0] || product.thumbnail}
             alt={product.title}
             width={300}
             height={300}

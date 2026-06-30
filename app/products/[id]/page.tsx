@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import ProductDetails from "@/components/product/ProductDetails";
 import { formatDateTime } from "@/lib/date";
 import RandomProducts from "@/components/product/RandomProducts";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{
@@ -23,6 +24,10 @@ export default async function ProductsPage({ params }: Props) {
   const { id } = await params;
   const product = await GetProductId(id);
   const products = await GetProducts();
+
+  if (!product) {
+    return notFound();
+  }
 
   return (
     <section className="flex w-full flex-col items-center justify-center px-4 md:px-20">
@@ -89,7 +94,10 @@ export default async function ProductsPage({ params }: Props) {
 
         <div className="grid w-full grid-cols-1 gap-10 md:grid-cols-2">
           {product.reviews.map((item) => (
-            <div className="flex flex-col w-full p-3 border border-gray-300 rounded-xl gap-3">
+            <div
+              key={item.reviewerName}
+              className="flex flex-col w-full p-3 border border-gray-300 rounded-xl gap-3"
+            >
               <div className="flex">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star

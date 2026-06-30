@@ -10,6 +10,14 @@ type ProductGalleryProps = {
 export default function ProductGallery({ images }: ProductGalleryProps) {
   const [activeImage, setActiveImage] = useState(images[0]);
 
+  if (images.length === 0) {
+    return (
+      <div className="flex h-[400px] w-full items-center justify-center rounded-xl bg-header-background md:w-[400px]">
+        Немає зображень
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto flex w-full flex-col-reverse items-center gap-4 md:w-fit md:flex-row">
       <div className="flex w-full justify-center gap-3 md:w-auto md:flex-col">

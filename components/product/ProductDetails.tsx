@@ -23,7 +23,7 @@ export default function ProductDetails() {
       </div>
 
       <Button className="w-[50%] md:w-[70%] rounded-3xl py-5">
-        Add to Card
+        Add to Cart
       </Button>
     </div>
   );
