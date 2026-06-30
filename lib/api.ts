@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Product, ProductsResponse } from "./types";
 import { dressStyleCategories, DressStyle } from "./dress-styles";
+import { notFound } from "next/navigation";
 
 export default async function getProductsByCategories(
   categories: string[],
@@ -48,3 +49,12 @@ export const GetProducts = async () => {
     isPopular: product.rating >= 4.5 && product.stock > 50,
   }));
 };
+
+export async function GetProductId(id: string) {
+  const res = await axios.get<Product>(`https://dummyjson.com/products/${id}`);
+
+  if (!res) {
+    return notFound();
+  }
+  return res.data;
+}
