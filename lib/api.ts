@@ -48,3 +48,8 @@ export const GetProducts = async () => {
     isPopular: product.rating >= 4.5 && product.stock > 50,
   }));
 };
+
+export async function GetProductId(id: string) {
+  const res = await axios.get<Product>(`https://dummyjson.com/products/${id}`);
+  return res.data;
+}

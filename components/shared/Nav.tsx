@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import DesktopNavLinks from "./DesktopNavLinks";
 import SearchCommandItems from "./SearchCommandItems";
 import MobileNavMenu from "./MobileNavMenu";
+import Link from "next/link";
 
 export type NavLink = {
   label: string;
@@ -28,7 +29,11 @@ export default function Nav() {
         <MobileNavMenu links={navLinks} />
       </div>
 
-      <h1 className="shrink-0 text-2xl font-black xl:text-3xl">SHOP.CO</h1>
+      <Link href="/">
+        <h1 className="shrink-0 text-2xl font-black xl:text-3xl">SHOP.CO</h1>
+      </Link>
+
+      {/* <h1 className="shrink-0 text-2xl font-black xl:text-3xl">SHOP.CO</h1> */}
 
       <div className="hidden lg:block">
         <DesktopNavLinks links={navLinks} />
