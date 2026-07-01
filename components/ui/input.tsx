@@ -5,11 +5,12 @@ import { ReactNode } from "react";
 
 type InputProps = React.ComponentProps<"input"> & {
   icon?: ReactNode;
+  endIcon?: ReactNode;
 };
 
-function Input({ icon, className, type, ...props }: InputProps) {
+function Input({ icon, endIcon, className, type, ...props }: InputProps) {
   return (
-    <div className="flex items-center bg-gray-100 p-1 rounded-2xl">
+    <div className="flex items-center rounded-2xl bg-gray-100 p-1">
       {icon}
       <input
         type={type}
@@ -20,6 +21,7 @@ function Input({ icon, className, type, ...props }: InputProps) {
         )}
         {...props}
       />
+      {endIcon}
     </div>
   );
 }
