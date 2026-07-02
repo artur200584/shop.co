@@ -24,7 +24,7 @@ export default function Login() {
   const supabase = createClient();
   const router = useRouter();
 
-  async function handleSubmitname(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     setError("");
@@ -69,12 +69,12 @@ export default function Login() {
       <div className="flex w-full flex-col items-center justify-center px-3">
         <div>
           <Title title="Welcome Back" />
-          <p className="text-gray-500">Sing in to SHOP.CO</p>
+          <p className="text-gray-500">Sign in to SHOP.CO</p>
         </div>
 
         <form
           className="mb-5 flex w-full max-w-md flex-col gap-3"
-          onSubmit={handleGoogleSignIn}
+          onSubmit={handleSubmit}
         >
           <div className="w-full">
             <label className="font-medium" htmlFor="email">
@@ -146,7 +146,7 @@ export default function Login() {
         </div>
         <span className="text-gray-500 mt-5">
           Don't have a account?
-          <Button variant="link">
+          <Button variant="link" asChild>
             <Link href="/register">Create account</Link>
           </Button>
         </span>

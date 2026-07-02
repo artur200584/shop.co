@@ -84,17 +84,12 @@ export default function Nav() {
             <ShoppingCart className="size-7" />
           </Button>
           {user ? (
-            <Link href="/account">
-              <Button variant="link" className="size-10 p-0">
-                <CircleUser className="size-7" />
-              </Button>
-            </Link>
-          ) : null}
-          {/* <Link href="/account">
             <Button variant="link" className="size-10 p-0">
-              <CircleUser className="size-7" />
+              <Link href="/account">
+                <CircleUser className="size-7" />
+              </Link>
             </Button>
-          </Link> */}
+          ) : null}
         </div>
       </nav>
     </>
