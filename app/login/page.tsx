@@ -13,13 +13,16 @@ import { Eye, EyeOff } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { signInWithGoogle } from "@/lib/supabase/auth-client";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isResendingConfirmation, setIsResendingConfirmation] = useState(false);
 
   const supabase = createClient();
   const router = useRouter();
@@ -28,6 +31,7 @@ export default function Login() {
     event.preventDefault();
 
     setError("");
+    setSuccess("");
     setIsLoading(true);
 
     const { error } = await supabase.auth.signInWithPassword({
@@ -38,7 +42,11 @@ export default function Login() {
     setIsLoading(false);
 
     if (error) {
-      setError(error.message);
+      setError(
+        error.message === "Email not confirmed"
+          ? "Email is not confirmed. Please confirm it from your email inbox."
+          : error.message,
+      );
       return;
     }
 
@@ -46,12 +54,36 @@ export default function Login() {
   }
 
   async function handleGoogleSignIn() {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
+    await signInWithGoogle(`${window.location.origin}/auth/callback`);
+  }
+
+  async function handleResendConfirmation() {
+    setError("");
+    setSuccess("");
+
+    if (!email) {
+      setError("Enter your email first.");
+      return;
+    }
+
+    setIsResendingConfirmation(true);
+
+    const { error } = await supabase.auth.resend({
+      type: "signup",
+      email,
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
       },
     });
+
+    setIsResendingConfirmation(false);
+
+    if (error) {
+      setError(error.message);
+      return;
+    }
+
+    setSuccess("Confirmation email sent. Check your inbox and spam folder.");
   }
 
   return (
@@ -121,6 +153,22 @@ export default function Login() {
 
             {error && (
               <p className="text-sm font-medium text-red-500">{error}</p>
+            )}
+            {error.includes("not confirmed") && (
+              <Button
+                type="button"
+                variant="link"
+                className="h-auto px-0 text-sm text-black"
+                disabled={isResendingConfirmation}
+                onClick={handleResendConfirmation}
+              >
+                {isResendingConfirmation
+                  ? "Sending confirmation email..."
+                  : "Resend confirmation email"}
+              </Button>
+            )}
+            {success && (
+              <p className="text-sm font-medium text-green-600">{success}</p>
             )}
           </div>
 
