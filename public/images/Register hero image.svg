@@ -1,0 +1,51 @@
+<svg width="900" height="1120" viewBox="0 0 900 1120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="photoBg" x1="0" y1="0" x2="900" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2F0EA"/>
+      <stop offset="0.55" stop-color="#D8D5CF"/>
+      <stop offset="1" stop-color="#BFBAB1"/>
+    </linearGradient>
+    <linearGradient id="shadow" x1="450" y1="0" x2="450" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.13"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1120" fill="url(#photoBg)"/>
+  <rect width="900" height="1120" fill="url(#shadow)"/>
+
+  <ellipse cx="292" cy="1010" rx="150" ry="28" fill="#000" opacity="0.12"/>
+  <ellipse cx="598" cy="1014" rx="166" ry="30" fill="#000" opacity="0.11"/>
+  <ellipse cx="448" cy="1018" rx="132" ry="25" fill="#000" opacity="0.1"/>
+
+  <circle cx="235" cy="310" r="62" fill="#28211E"/>
+  <path d="M178 336c21 80 92 83 119 1-16 26-95 26-119-1z" fill="#E2B79F"/>
+  <path d="M171 309c14-61 104-90 139-27 11 20 7 47-7 63-13-35-39-59-78-55-22 1-39 8-54 19z" fill="#151515"/>
+  <path d="M144 508c22-94 45-139 95-139 58 0 92 64 108 162l-16 281H164l-20-304z" fill="#111"/>
+  <path d="M184 407c31 32 78 32 112-1l18 76c-41 30-103 27-146-2l16-73z" fill="#F6F6F6"/>
+  <rect x="187" y="805" width="52" height="175" rx="20" fill="#1A1A1A"/>
+  <rect x="263" y="805" width="52" height="175" rx="20" fill="#1A1A1A"/>
+  <rect x="170" y="970" width="82" height="24" rx="12" fill="#050505"/>
+  <rect x="250" y="970" width="82" height="24" rx="12" fill="#050505"/>
+
+  <circle cx="606" cy="286" r="58" fill="#181818"/>
+  <path d="M553 313c18 72 82 75 108 1-21 22-80 23-108-1z" fill="#B8836E"/>
+  <path d="M535 522c11-101 52-161 105-161 61 0 98 55 119 161l-30 276H558l-23-276z" fill="#EDEDED"/>
+  <path d="M577 395c27 36 78 38 111 0l24 110c-48 31-112 27-157-3l22-107z" fill="#0A0A0A"/>
+  <rect x="589" y="795" width="48" height="184" rx="20" fill="#2A2A2A"/>
+  <rect x="665" y="795" width="48" height="184" rx="20" fill="#2A2A2A"/>
+  <rect x="570" y="970" width="84" height="24" rx="12" fill="#050505"/>
+  <rect x="650" y="970" width="84" height="24" rx="12" fill="#050505"/>
+
+  <circle cx="440" cy="374" r="54" fill="#2C211C"/>
+  <path d="M393 398c16 61 75 65 97 2-16 19-75 19-97-2z" fill="#D8A48F"/>
+  <path d="M366 557c12-101 42-152 88-152 51 0 83 53 100 153l-27 248H385l-19-249z" fill="#D6D0C6"/>
+  <path d="M406 432c24 26 65 27 92 0l13 72c-36 24-82 23-118 0l13-72z" fill="#111"/>
+  <rect x="405" y="795" width="40" height="165" rx="18" fill="#1B1B1B"/>
+  <rect x="470" y="795" width="40" height="165" rx="18" fill="#1B1B1B"/>
+  <rect x="386" y="952" width="74" height="22" rx="11" fill="#050505"/>
+  <rect x="454" y="952" width="74" height="22" rx="11" fill="#050505"/>
+
+  <text x="70" y="115" font-family="Arial Black, Inter, Arial, sans-serif" font-size="72" font-weight="900" fill="#0A0A0A">JOIN THE</text>
+  <text x="70" y="190" font-family="Arial Black, Inter, Arial, sans-serif" font-size="72" font-weight="900" fill="#0A0A0A">STYLE CLUB</text>
+  <text x="74" y="245" font-family="Inter, Arial, sans-serif" font-size="25" fill="#4F4F4F">Create your account and unlock member-only drops.</text>
+</svg>

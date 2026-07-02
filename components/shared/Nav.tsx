@@ -37,7 +37,7 @@ export default function Nav() {
 
   return (
     <>
-      {user ? null : (
+      {!user ? null : (
         <div className="flex items-center justify-center py-2 bg-black">
           <Link href="/login">
             <p className="text-white font-bold text-sm">
@@ -83,7 +83,7 @@ export default function Nav() {
           <Button variant="link" className="size-10 p-0">
             <ShoppingCart className="size-7" />
           </Button>
-          {user ? (
+          {!user ? (
             <Button variant="link" className="size-10 p-0">
               <Link href="/account">
                 <CircleUser className="size-7" />
